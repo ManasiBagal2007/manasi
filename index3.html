@@ -3,70 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>College Login</title>
+  <title>My Profile</title>
   <style>
+    /* Reset & base styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f0f4f8;
+      background: #f9f9f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .profile-card {
+      background: white;
+      max-width: 900px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px;
+      gap: 30px;
+    }
+
+    .profile-image {
+      flex: 1 1 250px;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
     }
-    .login-container {
-      background: white;
-      padding: 2rem 3rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      width: 320px;
-      text-align: center;
+
+    .profile-image img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0275d8;
     }
-    h2 {
-      margin-bottom: 1.5rem;
-      color: #333;
+
+    .profile-info {
+      flex: 2 1 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 0.75rem;
-      margin: 0.5rem 0 1.2rem 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      font-size: 1rem;
+
+    .profile-info h1 {
+      color: #0275d8;
+      font-size: 2.5rem;
     }
-    button {
-      width: 100%;
-      padding: 0.75rem;
-      background-color: #0056b3;
-      color: white;
+
+    .profile-info h3 {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .info-section {
+      background: #f0f4fb;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .info-section h4 {
+      margin-bottom: 15px;
+      border-bottom: 2px solid #0275d8;
+      padding-bottom: 5px;
+      color: #0275d8;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 10px;
       font-size: 1.1rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+    }
+
+    .social-links {
+      margin-top: 15px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: #0275d8;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      font-size: 1.3rem;
       transition: background-color 0.3s ease;
+      text-decoration: none;
     }
-    button:hover {
-      background-color: #004494;
+
+    .social-links a:hover {
+      background-color: #025aa5;
     }
-    .footer-text {
-      margin-top: 1.5rem;
-      font-size: 0.9rem;
-      color: #666;
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .profile-card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .profile-info {
+        flex: unset;
+        width: 100%;
+      }
     }
   </style>
+
+  <!-- Icons CDN (Font Awesome) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papbqN9UUQR7tZbNy/BQYZgq4EoDknhzY5ZhFc2v1wCzQ2U0nJYc7k3xKHbYGRI+h5xTVcc6eq2p52Kek4X8sg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
-  <div class="login-container">
-    <h2>College Login</h2>
-    <form action="/submit-login" method="POST">
-      <input type="text" name="username" placeholder="Username or Email" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit">Login</button>
-    </form>
-    <div class="footer-text">
-      <small>Forgot password? Contact IT support.</small>
+  <div class="profile-card">
+    
+    <div class="profile-info">
+      <h1>Manasi Bagal</h1>
+      <h3>Software Developer | Tech Enthusiast</h3>
+
+      <div class="Computer Engineering">
+        <h4>About Me</h4>
+        <p>
+          Passionate software developer with 5+ years of experience building web applications. Lover of clean code and coffee.
+        </p>
+      </div>
+
+      <div class="Computer Engineering">
+        <h4>Contact Information</h4>
+        <ul class="info-list">
+          <li><strong>Email:</strong>manasibagal427@gmail.com </li>
+          <li><strong>Phone:</strong> +1 234 567 8900</li>
+          <li><strong>Address:</strong> 123 Main Street, Cityville, Country</li>
+          <li><strong>Website:</strong> <a href="https://Manasi Bagal" target="_blank">johndoe.dev</a></li>
+        </ul>
+      </div>
+
+      <div class="Computer Engineering">
+        <h4>Connect with me</h4>
+        <div class="social-links">
+          <a href="https://linkedin.com/in/Manasi Bagal " target="_blank" aria-label="LinkedIn">
+            <i class="Computer Engineering"></i>
+          </a>
+          <a href="https://github.com/" target=Manasi Bagal "_blank" aria-label="GitHub">
+            <i class="Computer Engineerin"></i>
+          </a>
+          <a href="https://twitter.com/Manasi Bagal" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="mailto:manasibagal427@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </body>
